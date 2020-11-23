@@ -13,6 +13,7 @@ import JqueryLogo from "./img/logos/jquery-logo.png";
 import MaterialUiLogo from "./img/logos/material-ui-logo.png";
 import PostgresLogo from "./img/logos/postgres-logo.png";
 import SequelizeLogo from "./img/logos/sequelize-logo.png";
+import { Button } from "@material-ui/core";
 
 class Skills extends Component {
   render() {
@@ -28,6 +29,28 @@ class Skills extends Component {
               With my experience, I bring a wide variety of skills to help you
               acheive your goals and create a product that works for you.
             </p>
+            <Row className="d-flex justify-content-center">
+              <a href="Zac-Evans-Resume.pdf" target="_blank">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  style={{ width: "200px", height: "80px", fontSize: "20px" }}
+                  className="m-4"
+                >
+                  View Resume
+                </Button>
+              </a>
+              <a href="/projects">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  style={{ width: "200px", height: "80px", fontSize: "20px" }}
+                  className="m-4"
+                >
+                  See Projects
+                </Button>
+              </a>
+            </Row>
           </Col>
           <Col className="col-12 col-xl-8 ">
             <Row className="p-4 d-flex" style={{ maxWidth: "1500px" }}>
