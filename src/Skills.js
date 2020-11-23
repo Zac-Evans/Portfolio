@@ -32,35 +32,35 @@ class Skills extends Component {
           <Col className="col-12 col-xl-8 ">
             <Row className="p-4 d-flex" style={{ maxWidth: "1500px" }}>
               <Col className="m-4">
-                <Image src={Html5Logo} height="200px" />
+                <Image src={Html5Logo} height="150px" />
               </Col>
               <Col className="m-4 ">
-                <Image src={CSSLogo} height="200px" />
+                <Image src={CSSLogo} height="150px" />
               </Col>
               <Col className="m-4">
-                <Image src={JavascriptLogo} height="200px" />
+                <Image src={JavascriptLogo} height="150px" />
               </Col>
               <Col className="m-4">
-                <Image src={JqueryLogo} width="200px" />
+                <Image src={JqueryLogo} width="150px" />
               </Col>
               <Col className="m-4">
-                <Image src={ExpressNodeLogo} width="200px" />
+                <Image src={ExpressNodeLogo} width="150px" />
               </Col>
 
               <Col className="m-4">
-                <Image src={PostgresLogo} width="200px" />
+                <Image src={PostgresLogo} width="150px" />
               </Col>
               <Col className="m-4">
-                <Image src={SequelizeLogo} width="200px" />
+                <Image src={SequelizeLogo} width="150px" />
               </Col>
               <Col className="m-4">
-                <Image src={BootstrapLogo} width="200px" />
+                <Image src={BootstrapLogo} width="150px" />
               </Col>
               <Col className="m-4">
-                <Image src={MaterialUiLogo} width="200px" />
+                <Image src={MaterialUiLogo} width="150px" />
               </Col>
               <Col className="m-4">
-                <Image src={BulmaLogo} width="200px" />
+                <Image src={BulmaLogo} width="150px" />
               </Col>
             </Row>
           </Col>

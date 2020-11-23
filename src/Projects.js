@@ -59,12 +59,13 @@ class Projects extends Component {
             }}
           >
             <Card.Header style={{ backgroundColor: "#FCA311" }}>
-              <Nav variant="tabs" defaultActiveKey="#first">
+              <Nav variant="tabs" defaultActiveKey="#simply-budget">
                 <Col className="col-12 col-md-4 p-0 m-0">
                   <Nav.Item>
                     <Nav.Link
                       className="ml-4 mr-4"
                       href="#fakeazon"
+                      default
                       onClick={this.handleFakeazonClick}
                     >
                       <h5>Fake-A-Zon</h5>
@@ -96,9 +97,7 @@ class Projects extends Component {
               </Nav>
             </Card.Header>
             <Card.Body style={{ minHeight: "485px" }} className="text-dark">
-              {this.state.showPlaceholderComponent ? (
-                <ProjectPlaceHolder />
-              ) : null}
+              {this.state.showPlaceholderComponent ? <SimplyBudget /> : null}
               {this.state.showFakeazonComponent ? <Fakeazon /> : null}
               {this.state.showSimplyBudgetComponent ? <SimplyBudget /> : null}
               {this.state.showDateDeciderComponent ? <DateDecider /> : null}

@@ -62,7 +62,7 @@ export default function SignUp() {
   return (
     <div>
       <SiteNavbar />
-      <div className="row h-100">
+      <div className="row ">
         <Container
           component="main"
           maxWidth="xs"

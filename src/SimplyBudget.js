@@ -65,7 +65,11 @@ export default function SimplyBudget() {
         >
           <StyleRoot>
             <div style={styles.fadeIn}>
-              <CardActionArea className="m-0 p-0">
+              <CardActionArea
+                className="m-0 p-0"
+                href="https://simplybudget.co"
+                target="_blank"
+              >
                 <Image fluid src={simplyBudgetLogo} />
                 <CardContent>
                   <Typography
@@ -95,10 +99,10 @@ export default function SimplyBudget() {
       </Col>
       <Col className="col-12 col-lg-6">
         <Card
-          className={classes.root}
+          className="m-4"
           style={{
             backgroundColor: "rgb(229, 229, 229, .5)",
-            height: "100%",
+            height: "90%",
           }}
         >
           <CardHeader
@@ -121,24 +125,54 @@ export default function SimplyBudget() {
                 <Col>
                   <h4>Frontend</h4>
                   <ul className="">
-                    <li>React</li>
-                    <li>CSS</li>
-                    <li>HTML</li>
-                    <li>Bootstrap</li>
-                    <li>Material-UI</li>
-                    <li>jQuery</li>
+                    <li>
+                      <h6>React</h6>
+                    </li>
+                    <li>
+                      <h6>CSS</h6>
+                    </li>
+                    <li>
+                      <h6>HTML</h6>
+                    </li>
+                    <li>
+                      <h6>Bootstrap</h6>
+                    </li>
+                    <li>
+                      <h6>Material-UI</h6>
+                    </li>
+                    <li>
+                      <h6>jQuery</h6>
+                    </li>
                   </ul>
                 </Col>
                 <Col>
                   <h4>Backend</h4>
                   <ul>
-                    <li>NodeJS</li>
-                    <li>Express</li>
-                    <li>PostgresQL</li>
-                    <li>Sequelize</li>
-                    <li>Bcrypt</li>
+                    <li>
+                      <h6>NodeJS</h6>
+                    </li>
+                    <li>
+                      <h6>Express</h6>
+                    </li>
+                    <li>
+                      <h6>PostgresQL</h6>
+                    </li>
+                    <li>
+                      <h6>Sequelize</h6>
+                    </li>
+                    <li>
+                      <h6>Bcrypt</h6>
+                    </li>
                   </ul>
                 </Col>
+              </Row>
+              <Row>
+                <a
+                  href="https://github.com/Zac-Evans/simply-budget"
+                  className="mx-auto m-3"
+                >
+                  <h4>View on GitHub</h4>
+                </a>
               </Row>
             </CardContent>
           </CardActionArea>

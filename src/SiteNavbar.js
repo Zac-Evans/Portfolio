@@ -20,15 +20,15 @@ const SiteNavbar = () => {
       <Row className="d-flex justify-content-center text-center">
         <Navbar
           expand="lg"
-          className=" d-flex justify-content-start text-center mb-4 navbar-dark"
+          className="mb-4 navbar-dark"
           style={{
             backgroundColor: "#FFFFFF00",
           }}
         >
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <div className="d-flex justify-content-center">
-              <Nav className="mx-auto navigation">
+            <div>
+              <Nav>
                 {navLinks.map((nav, i) => {
                   return (
                     <Link key={i} className="p-4 text-light" to={nav}>
@@ -39,7 +39,7 @@ const SiteNavbar = () => {
               </Nav>
             </div>
           </Navbar.Collapse>
-        </Navbar>{" "}
+        </Navbar>
       </Row>
     </div>
   );
