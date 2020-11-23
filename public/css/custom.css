@@ -1,0 +1,22 @@
+/*REVOLVING GRADIENT*/
+/* .overlay {
+  background: linear-gradient(-45deg, #5264ee, #100368, #23a6d5, #3133c6);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+.overlay {
+  background-image: url("../img/overlay.gif");
+  background-size: cover;
+}
