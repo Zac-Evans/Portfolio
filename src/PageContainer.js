@@ -12,6 +12,7 @@ import Contact from "./Contact";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import Projects from "./Projects";
+import SiteNavBar from "./SiteNavbar";
 
 class PageContainer extends Component {
   overlayStyle = {
@@ -34,7 +35,12 @@ class PageContainer extends Component {
   render() {
     return (
       <div style={this.overlayStyle}>
-        <Container className="vh-100 intro d-flex flex-column" fluid>
+        <Container
+          className="vh-100 intro d-flex flex-column justify-content-between"
+          fluid
+        >
+          <SiteNavBar />
+
           <Router>
             <Switch>
               <Route exact path="/" component={HomeContainer} />
@@ -45,6 +51,7 @@ class PageContainer extends Component {
               <Route path="/Contact" component={Contact} />
             </Switch>
           </Router>
+          <FooterNavigation />
         </Container>
       </div>
     );

@@ -18,8 +18,7 @@ import { Button } from "@material-ui/core";
 class Skills extends Component {
   render() {
     return (
-      <div>
-        <SiteNavbar />
+      <div className="pt-4">
         <Row className="align-items-center h-100">
           <Col className="col-xl-0 col-xl-1" />
 

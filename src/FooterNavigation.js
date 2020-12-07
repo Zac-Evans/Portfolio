@@ -10,7 +10,7 @@ import Nav from "react-bootstrap/Nav";
 class FooterNavigation extends Component {
   render() {
     return (
-      <Navbar className="fixed-bottom" style={{ backgroundColor: "#000000" }}>
+      <Navbar style={{ backgroundColor: "rgb(0,0,0,0)" }}>
         <div className="col-12 text-center mx-auto">
           <Nav className="justify-content-center">
             <a href="https://github.com/Zac-Evans" target="_blank">

@@ -49,8 +49,7 @@ class Projects extends Component {
 
   render() {
     return (
-      <div className="text-center">
-        <SiteNavbar />
+      <div className="text-center pt-4">
         <Container>
           <Card
             style={{

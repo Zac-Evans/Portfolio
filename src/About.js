@@ -8,9 +8,8 @@ import Button from "@material-ui/core/Button";
 class About extends Component {
   render() {
     return (
-      <div>
-        <SiteNavbar />
-        <Row className="d-flex align-self-center">
+      <div className="pt-4">
+        <Row>
           <Col xl="2" lg="2" md="0" sm="0" xs="0" />
           <Col
             className="d-flex justify-content-center"
@@ -22,15 +21,14 @@ class About extends Component {
           >
             <img
               src={Headshot}
-              width="300"
-              height="300"
+              style={{ width: "50vw", maxWidth: "300px" }}
               className="d-flex align-self-center"
             />
           </Col>
 
-          <Col className="p-4 m-4 w-100" xl="5" lg="5" md="12" sm="12" xs="12">
-            <h2>About me</h2>
-            <p className="pr-4">
+          <Col className="pl-0 m-4 w-100" xl="5" lg="5" md="12" sm="12" xs="12">
+            <h2 style={{ fontSize: "clamp(25px, 3vw, 40px)" }}>About me</h2>
+            <p className="pr-4" style={{ fontSize: "clamp(16px,2vw, 20px)" }}>
               With a professional background in music, I have always been
               dedicated towards the idea of applying technical ability towards
               creative endeavors.
