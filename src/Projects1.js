@@ -9,61 +9,48 @@ import SimplyBudget from "./SimplyBudget";
 import ProjectPlaceHolder from "./ProjectPlaceHolder";
 
 class Projects extends Component {
-  // constructor(props) {
-  //   super(props);
+  constructor(props) {
+    super(props);
 
-  //   this.state = {
-  //     showFakeazonComponent: false,
-  //     showSimplyBudgetComponent: false,
-  //     showDateDeciderComponent: false,
-  //     showPlaceholderComponent: true,
-  //   };
-  // }
+    this.state = {
+      showFakeazonComponent: false,
+      showSimplyBudgetComponent: false,
+      showDateDeciderComponent: false,
+      showPlaceholderComponent: true,
+    };
+  }
 
-  // handleFakeazonClick = () => {
-  //   this.setState({
-  //     showFakeazonComponent: true,
-  //     showSimplyBudgetComponent: false,
-  //     showDateDeciderComponent: false,
-  //     showPlaceholderComponent: false,
-  //   });
-  // };
+  handleFakeazonClick = () => {
+    this.setState({
+      showFakeazonComponent: true,
+      showSimplyBudgetComponent: false,
+      showDateDeciderComponent: false,
+      showPlaceholderComponent: false,
+    });
+  };
 
-  // handleSimplyBudgetClick = () => {
-  //   this.setState({
-  //     showFakeazonComponent: false,
-  //     showSimplyBudgetComponent: true,
-  //     showDateDeciderComponent: false,
-  //     showPlaceholderComponent: false,
-  //   });
-  // };
+  handleSimplyBudgetClick = () => {
+    this.setState({
+      showFakeazonComponent: false,
+      showSimplyBudgetComponent: true,
+      showDateDeciderComponent: false,
+      showPlaceholderComponent: false,
+    });
+  };
 
-  // handleDateDeciderClick = () => {
-  //   this.setState({
-  //     showFakeazonComponent: false,
-  //     showSimplyBudgetComponent: false,
-  //     showDateDeciderComponent: true,
-  //     showPlaceholderComponent: false,
-  //   });
-  // };
+  handleDateDeciderClick = () => {
+    this.setState({
+      showFakeazonComponent: false,
+      showSimplyBudgetComponent: false,
+      showDateDeciderComponent: true,
+      showPlaceholderComponent: false,
+    });
+  };
 
   render() {
     return (
       <div className="text-center pt-4">
-        <Row>
-          <Col>
-            <Fakeazon />
-          </Col>
-
-          <Col>
-            <SimplyBudget />
-          </Col>
-          <Col>
-            <DateDecider />
-          </Col>
-        </Row>
-
-        {/* <Container>
+        <Container>
           <Card
             style={{
               backgroundColor: "rgb(20, 33, 61, .5)",
@@ -115,7 +102,7 @@ class Projects extends Component {
               {this.state.showDateDeciderComponent ? <DateDecider /> : null}
             </Card.Body>
           </Card>
-        </Container> */}
+        </Container>
       </div>
     );
   }

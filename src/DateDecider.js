@@ -44,7 +44,7 @@ export default function DateDecider() {
   };
   const calc = (x, y) => [
     -(y - window.innerHeight / 2) / 20,
-    (x - window.innerWidth / 3) / 20,
+    (x - window.innerWidth / 1) / 30,
     0.9,
   ];
   const trans = (x, y, s) =>
@@ -52,7 +52,7 @@ export default function DateDecider() {
 
   return (
     <Row>
-      <Col className="col-12 col-lg-6">
+      <Col className="col-12">
         <animated.div
           class="cardProject"
           onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
@@ -102,7 +102,7 @@ export default function DateDecider() {
           </StyleRoot>
         </animated.div>
       </Col>
-      <Col className="col-12 col-lg-6">
+      {/* <Col className="col-12 col-lg-6">
         <Card
           className="m-4"
           style={{
@@ -182,7 +182,7 @@ export default function DateDecider() {
             </CardContent>
           </CardActionArea>
         </Card>
-      </Col>
+      </Col> */}
     </Row>
   );
 }
