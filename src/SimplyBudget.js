@@ -49,7 +49,7 @@ export default function SimplyBudget() {
   const classes = useStyles();
   const [props, set] = useSpring(() => ({
     xys: [0, 0, 0.9],
-    config: { mass: 10, tension: 100, friction: 90 },
+    config: { mass: 10, tension: 100, friction: 70 },
   }));
   return (
     <Row>
