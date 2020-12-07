@@ -10,10 +10,7 @@ class HomeContainer extends Component {
     return (
       <section className="intro">
         <div className="content">
-          <Container className="p-4">
-            <br />
-            <SiteNavbar />
-          </Container>
+          <Container className="p-4"></Container>
         </div>
       </section>
     );
