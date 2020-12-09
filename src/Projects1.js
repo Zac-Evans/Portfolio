@@ -4,7 +4,7 @@ import { Container, Row, Col, Image, Card, Nav, Button } from "react-bootstrap";
 import fakeazon from "./img/fakeazon.png";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DateDecider from "./DateDecider";
-import Fakeazon from "./Fakeazon";
+import Fakeazon from "./Fakeazon1";
 import SimplyBudget from "./SimplyBudget";
 import ProjectPlaceHolder from "./ProjectPlaceHolder";
 

@@ -1,24 +1,13 @@
 import React from "react";
-import SiteNavbar from "./SiteNavbar";
 import { Container, Row, Col, Image, Nav } from "react-bootstrap";
-import fakeazon from "./img/fakeazon.png";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DateDecider from "./DateDecider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Fakeazon from "./Fakeazon";
 import SimplyBudget from "./SimplyBudget";
-import ProjectPlaceHolder from "./ProjectPlaceHolder";
-import {
-  Fab,
-  Card,
-  Typography,
-  Button,
-  CardContent,
-  CardActions,
-} from "@material-ui/core";
-import PropTypes from "prop-types";
+
+import { Button } from "@material-ui/core";
+
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
