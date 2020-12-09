@@ -80,6 +80,7 @@ const Projects = () => {
               className="m-2"
               variant="contained"
               href="https://github.com/Zac-Evans/Fakeazon"
+              target="_blank"
             >
               <b>
                 <FontAwesomeIcon
@@ -111,6 +112,7 @@ const Projects = () => {
               className="m-2"
               variant="contained"
               href="https://github.com/Zac-Evans/Simply-Budget"
+              target="_blank"
             >
               <b>
                 <FontAwesomeIcon
@@ -142,6 +144,7 @@ const Projects = () => {
               className="m-2"
               variant="contained"
               href="https://github.com/Zac-Evans/Date-Decider"
+              target="_blank"
             >
               <b>
                 <FontAwesomeIcon
