@@ -18,25 +18,21 @@ class App extends Component {
   overlayStyle = {
     width: "100%",
     height: "100%",
-
     backgroundImage: `url(${Overlay})`,
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
     overflow: "auto",
     backgroundPosition: "center",
   };
 
-  backgroundStyle = {
-    width: "100%",
-    height: "100%",
-    boxShadow: "inset 0 0 0 1000px blue",
-    opacity: 0.6,
-    overflow: "auto",
-    backgroundPosition: "center",
-  };
   render() {
     return (
       <div style={this.overlayStyle}>
         <Container
-          className="vh-100 intro d-flex flex-column justify-content-between"
+          className="intro d-flex flex-column justify-content-between"
           fluid
         >
           <SiteNavBar />

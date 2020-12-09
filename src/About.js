@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Col, Row, Image } from "react-bootstrap";
+import { Col, Row, Image, Container } from "react-bootstrap";
 import SiteNavbar from "./SiteNavbar";
 import { Paper } from "@material-ui/core";
 import Headshot from "./img/headshot.gif";
@@ -8,11 +8,11 @@ import Button from "@material-ui/core/Button";
 class About extends Component {
   render() {
     return (
-      <div className="pt-4">
+      <Container fluid>
         <Row>
           <Col xl="2" lg="2" md="0" sm="0" xs="0" />
           <Col
-            className="d-flex justify-content-center"
+            className="d-flex justify-content-center p-3"
             xl="3"
             lg="3"
             md="12"
@@ -26,9 +26,9 @@ class About extends Component {
             />
           </Col>
 
-          <Col className="pl-0 m-4 w-100" xl="5" lg="5" md="12" sm="12" xs="12">
+          <Col className="p-3 m-0 w-100" xl="5" lg="5" md="12" sm="12" xs="12">
             <h2 style={{ fontSize: "clamp(25px, 3vw, 40px)" }}>About me</h2>
-            <p className="pr-4" style={{ fontSize: "clamp(16px,2vw, 20px)" }}>
+            <p className="" style={{ fontSize: "clamp(16px,2vw, 20px)" }}>
               With a professional background in music, I have always been
               dedicated towards the idea of applying technical ability towards
               creative endeavors.
@@ -65,7 +65,7 @@ class About extends Component {
             </Button>
           </a>
         </Row>
-      </div>
+      </Container>
     );
   }
 }

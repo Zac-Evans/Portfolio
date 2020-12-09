@@ -51,57 +51,56 @@ export default function Fakeazon() {
     `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
   return (
-    <Row>
-      <Col className="col-12">
-        <animated.div
-          class="cardProject"
-          onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-          onMouseLeave={() => set({ xys: [0, 0, 0.9] })}
-          style={{
-            transform: props.xys.interpolate(trans),
-            backgroundImage: `url(${ShopBg})`,
-          }}
-        >
-          <StyleRoot>
-            <div style={styles.fadeIn}>
-              <CardActionArea
-                href="https://e-commerce-project-2020.netlify.app/"
-                target="_blank"
+    <animated.div
+      class="cardProject"
+      onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+      onMouseLeave={() => set({ xys: [0, 0, 0.9] })}
+      style={{
+        transform: props.xys.interpolate(trans),
+        backgroundImage: `url(${ShopBg})`,
+      }}
+    >
+      <StyleRoot>
+        <div style={styles.fadeIn}>
+          <CardActionArea
+            href="https://e-commerce-project-2020.netlify.app/"
+            target="_blank"
+          >
+            <Image fluid src={fakeazonLogo} className="m-0 p-0" />
+            <CardContent>
+              <Typography
+                variant="body2"
+                color="textSecondary"
+                component="p"
+                style={{ fontSize: "32px" }}
               >
-                <Image fluid src={fakeazonLogo} className="m-0 p-0" />
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                    style={{ fontSize: "32px" }}
-                  >
-                    A minimal e-commerce demo.
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions
-                style={{
-                  backgroundColor: "#000000",
-                }}
-                className="d-flex justify-content-around"
-              >
-                <Button
-                  size="large"
-                  color="primary"
-                  href="https://e-commerce-project-2020.netlify.app/"
-                  target="_blank"
-                >
-                  <h6>
-                    <b>Visit</b>
-                  </h6>
-                </Button>
-              </CardActions>
-            </div>
-          </StyleRoot>
-        </animated.div>
-      </Col>
-      {/* <Col className="col-12 col-lg-6">
+                An e-commerce demo.
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions
+            style={{
+              backgroundColor: "#000000",
+            }}
+            className="d-flex justify-content-around"
+          >
+            <Button
+              size="large"
+              color="primary"
+              href="https://e-commerce-project-2020.netlify.app/"
+              target="_blank"
+            >
+              <h6>
+                <b>Visit</b>
+              </h6>
+            </Button>
+          </CardActions>
+        </div>
+      </StyleRoot>
+    </animated.div>
+  );
+  {
+    /* <Col className="col-12 col-lg-6">
         <Card
           className="m-4"
           style={{
@@ -181,7 +180,6 @@ export default function Fakeazon() {
             </CardContent>
           </CardActionArea>
         </Card>
-      </Col> */}
-    </Row>
-  );
+      </Col> */
+  }
 }

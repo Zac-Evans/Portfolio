@@ -52,52 +52,47 @@ export default function SimplyBudget() {
     config: { mass: 10, tension: 100, friction: 70 },
   }));
   return (
-    <Row>
-      <Col className="col-12">
-        <animated.div
-          class="cardProject"
-          onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
-          onMouseLeave={() => set({ xys: [0, 0, 0.9] })}
-          style={{
-            transform: props.xys.interpolate(trans),
-            backgroundImage: `url(${Piggy})`,
-          }}
-        >
-          <StyleRoot>
-            <div style={styles.fadeIn}>
-              <CardActionArea
-                className="m-0 p-0"
-                href="https://simplybudget.co"
-                target="_blank"
+    <animated.div
+      class="cardProject"
+      onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
+      onMouseLeave={() => set({ xys: [0, 0, 0.9] })}
+      style={{
+        transform: props.xys.interpolate(trans),
+        backgroundImage: `url(${Piggy})`,
+      }}
+    >
+      <StyleRoot>
+        <div style={styles.fadeIn}>
+          <CardActionArea href="https://simplybudget.co" target="_blank">
+            <Image fluid src={simplyBudgetLogo} className="m-0 p-0" />
+            <CardContent>
+              <Typography
+                variant="body2"
+                style={{ color: "black", fontSize: "32px" }}
+                component="p"
               >
-                <Image fluid src={simplyBudgetLogo} />
-                <CardContent>
-                  <Typography
-                    variant="body2"
-                    style={{ color: "black", fontSize: "30px" }}
-                    component="p"
-                  >
-                    {<b>Make your budget Simply.</b>}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-              <CardActions
-                style={{
-                  backgroundColor: "#000000",
-                }}
-                className="d-flex justify-content-around"
-              >
-                <Button size="small" color="primary">
-                  <h6>
-                    <b>Visit</b>
-                  </h6>
-                </Button>
-              </CardActions>
-            </div>
-          </StyleRoot>
-        </animated.div>
-      </Col>
-      {/* <Col className="col-12 col-lg-6">
+                {<b>Make your budget Simply.</b>}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions
+            style={{
+              backgroundColor: "#000000",
+            }}
+            className="d-flex justify-content-around"
+          >
+            <Button size="large" color="primary">
+              <h6>
+                <b>Visit</b>
+              </h6>
+            </Button>
+          </CardActions>
+        </div>
+      </StyleRoot>
+    </animated.div>
+  );
+  {
+    /* <Col className="col-12 col-lg-6">
         <Card
           className="m-4"
           style={{
@@ -177,7 +172,6 @@ export default function SimplyBudget() {
             </CardContent>
           </CardActionArea>
         </Card>
-      </Col> */}
-    </Row>
-  );
+      </Col> */
+  }
 }

@@ -1,69 +1,216 @@
-import React, { Component } from "react";
+import React from "react";
 import SiteNavbar from "./SiteNavbar";
-import { Container, Row, Col, Image, Card, Nav, Button } from "react-bootstrap";
+import { Container, Row, Col, Image, Nav } from "react-bootstrap";
 import fakeazon from "./img/fakeazon.png";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DateDecider from "./DateDecider";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import Fakeazon from "./Fakeazon";
 import SimplyBudget from "./SimplyBudget";
 import ProjectPlaceHolder from "./ProjectPlaceHolder";
+import {
+  Fab,
+  Card,
+  Typography,
+  Button,
+  CardContent,
+  CardActions,
+} from "@material-ui/core";
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
 
-class Projects extends Component {
-  // constructor(props) {
-  //   super(props);
+const useStyles = makeStyles((theme) => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
 
-  //   this.state = {
-  //     showFakeazonComponent: false,
-  //     showSimplyBudgetComponent: false,
-  //     showDateDeciderComponent: false,
-  //     showPlaceholderComponent: true,
-  //   };
-  // }
+const Projects = () => {
+  const classes = useStyles();
+  const [openFakeazon, setOpenFakeazon] = React.useState(false);
+  const [openSimplyBudget, setOpenSimplyBudget] = React.useState(false);
+  const [openDateDecider, setOpenDateDecider] = React.useState(false);
 
-  // handleFakeazonClick = () => {
-  //   this.setState({
-  //     showFakeazonComponent: true,
-  //     showSimplyBudgetComponent: false,
-  //     showDateDeciderComponent: false,
-  //     showPlaceholderComponent: false,
-  //   });
-  // };
+  const handleOpenFakeazon = () => {
+    setOpenFakeazon(true);
+  };
+  const handleOpenSimplyBudget = () => {
+    setOpenSimplyBudget(true);
+  };
+  const handleOpenDateDecider = () => {
+    setOpenDateDecider(true);
+  };
 
-  // handleSimplyBudgetClick = () => {
-  //   this.setState({
-  //     showFakeazonComponent: false,
-  //     showSimplyBudgetComponent: true,
-  //     showDateDeciderComponent: false,
-  //     showPlaceholderComponent: false,
-  //   });
-  // };
+  const handleClose = () => {
+    setOpenFakeazon(false);
+    setOpenSimplyBudget(false);
+    setOpenDateDecider(false);
+  };
 
-  // handleDateDeciderClick = () => {
-  //   this.setState({
-  //     showFakeazonComponent: false,
-  //     showSimplyBudgetComponent: false,
-  //     showDateDeciderComponent: true,
-  //     showPlaceholderComponent: false,
-  //   });
-  // };
+  return (
+    <Container fluid className="text-center">
+      <Row>
+        <Col className="p-0 col-12 col-md-4">
+          <Fakeazon />
+          <Row className=" d-flex justify-content-center">
+            <Button
+              variant="contained"
+              color="primary"
+              className="m-2"
+              onClick={handleOpenFakeazon}
+            >
+              <b>More Info</b>
+            </Button>
 
-  render() {
-    return (
-      <div className="text-center pt-4">
-        <Row>
-          <Col>
-            <Fakeazon />
-          </Col>
+            <Button
+              color="primary"
+              elevation={24}
+              className="m-2"
+              variant="contained"
+              href="https://github.com/Zac-Evans/Fakeazon"
+            >
+              <b>
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="mr-2 p-0"
+                  style={{ color: "white", fontSize: "16px" }}
+                />
+                GitHub
+              </b>
+            </Button>
+          </Row>
+        </Col>
 
-          <Col>
-            <SimplyBudget />
-          </Col>
-          <Col>
-            <DateDecider />
-          </Col>
-        </Row>
+        <Col className="p-0 col-12 col-md-4">
+          <SimplyBudget />
+          <Row className=" d-flex justify-content-center">
+            <Button
+              variant="contained"
+              color="primary"
+              className="m-2"
+              onClick={handleOpenSimplyBudget}
+            >
+              <b>More Info</b>
+            </Button>
 
-        {/* <Container>
+            <Button
+              color="primary"
+              elevation={24}
+              className="m-2"
+              variant="contained"
+              href="https://github.com/Zac-Evans/Simply-Budget"
+            >
+              <b>
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="mr-2 p-0"
+                  style={{ color: "white", fontSize: "16px" }}
+                />
+                GitHub
+              </b>
+            </Button>
+          </Row>
+        </Col>
+
+        <Col className="p-0 col-12 col-md-4">
+          <DateDecider />
+          <Row className=" d-flex justify-content-center">
+            <Button
+              variant="contained"
+              color="primary"
+              className="m-2"
+              onClick={handleOpenDateDecider}
+            >
+              <b>More Info</b>
+            </Button>
+
+            <Button
+              color="primary"
+              elevation={24}
+              className="m-2"
+              variant="contained"
+              href="https://github.com/Zac-Evans/Date-Decider"
+            >
+              <b>
+                <FontAwesomeIcon
+                  icon={faGithub}
+                  className="mr-2 p-0"
+                  style={{ color: "white", fontSize: "16px" }}
+                  href=""
+                />
+                GitHub
+              </b>
+            </Button>
+          </Row>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Modal
+            aria-labelledby="spring-modal-title"
+            aria-describedby="spring-modal-description"
+            className={classes.modal}
+            open={openFakeazon}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <div className={classes.paper}>Fakeazon</div>
+          </Modal>
+        </Col>
+        <Col>
+          <Modal
+            aria-labelledby="spring-modal-title"
+            aria-describedby="spring-modal-description"
+            className={classes.modal}
+            open={openSimplyBudget}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <div className={classes.paper}>Simply Budget</div>
+          </Modal>
+        </Col>
+        <Col>
+          <Modal
+            aria-labelledby="spring-modal-title"
+            aria-describedby="spring-modal-description"
+            className={classes.modal}
+            open={openDateDecider}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <div className={classes.paper}>Date Decider</div>
+          </Modal>
+        </Col>
+      </Row>
+    </Container>
+  );
+
+  {
+    /* <Container>
           <Card
             style={{
               backgroundColor: "rgb(20, 33, 61, .5)",
@@ -115,10 +262,8 @@ class Projects extends Component {
               {this.state.showDateDeciderComponent ? <DateDecider /> : null}
             </Card.Body>
           </Card>
-        </Container> */}
-      </div>
-    );
+        </Container> */
   }
-}
+};
 
 export default Projects;

@@ -60,144 +60,141 @@ export default function SignUp() {
   const classes = useStyles();
 
   return (
-    <div className="row p-4">
-      <Container
-        component="main"
-        maxWidth="xs"
-        style={{
-          backgroundColor: "rgb(20, 33, 61, .7)",
-        }}
-        className="my-auto"
-      >
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <EmailIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            <b>Get in touch</b>
-          </Typography>
-          <form className={classes.form} noValidate>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="fname"
-                  name="firstName"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="firstName"
-                  InputProps={{
-                    className: classes.multilineColor,
-                  }}
-                  label={
-                    <div
-                      style={{
-                        color: "white",
-                      }}
-                    >
-                      First Name
-                    </div>
-                  }
-                  autoFocus
-                  style={{
-                    backgroundColor: "rgb(255, 255, 255, 0)",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="lastName"
-                  InputProps={{
-                    className: classes.multilineColor,
-                  }}
-                  label={
-                    <div
-                      style={{
-                        color: "white",
-                      }}
-                    >
-                      Last Name
-                    </div>
-                  }
-                  name="lastName"
-                  autoComplete="lname"
-                  style={{
-                    backgroundColor: "rgb(255, 255, 255, 0)",
-                    fontColor: "white",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="email"
-                  InputProps={{
-                    className: classes.multilineColor,
-                  }}
-                  label={
-                    <div
-                      style={{
-                        color: "white",
-                      }}
-                    >
-                      Email Address
-                    </div>
-                  }
-                  name="email"
-                  autoComplete="email"
-                  style={{
-                    backgroundColor: "rgb(255, 255, 255, 0)",
-                    color: "white",
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  InputProps={{
-                    className: classes.multilineColor,
-                  }}
-                  multiline
-                  rows={4}
-                  name="message"
-                  label={
-                    <div
-                      style={{
-                        color: "white",
-                      }}
-                    >
-                      Message
-                    </div>
-                  }
-                  type="message"
-                  id="message"
-                  style={{
-                    backgroundColor: "rgb(255, 255, 255, 0)",
-                  }}
-                />
-              </Grid>
+    <Container
+      component="main"
+      maxWidth="xs"
+      style={{
+        backgroundColor: "rgb(20, 33, 61, .7)",
+      }}
+      className="my-auto"
+    >
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <EmailIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          <b>Get in touch</b>
+        </Typography>
+        <form className={classes.form} noValidate>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                autoComplete="fname"
+                name="firstName"
+                variant="outlined"
+                required
+                fullWidth
+                id="firstName"
+                InputProps={{
+                  className: classes.multilineColor,
+                }}
+                label={
+                  <div
+                    style={{
+                      color: "white",
+                    }}
+                  >
+                    First Name
+                  </div>
+                }
+                autoFocus
+                style={{
+                  backgroundColor: "rgb(255, 255, 255, 0)",
+                }}
+              />
             </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              <b>Submit</b>
-            </Button>
-          </form>
-        </div>
-        <Box mt={5}>{/* <Copyright /> */}</Box>
-      </Container>
-    </div>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="lastName"
+                InputProps={{
+                  className: classes.multilineColor,
+                }}
+                label={
+                  <div
+                    style={{
+                      color: "white",
+                    }}
+                  >
+                    Last Name
+                  </div>
+                }
+                name="lastName"
+                autoComplete="lname"
+                style={{
+                  backgroundColor: "rgb(255, 255, 255, 0)",
+                  fontColor: "white",
+                }}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="email"
+                InputProps={{
+                  className: classes.multilineColor,
+                }}
+                label={
+                  <div
+                    style={{
+                      color: "white",
+                    }}
+                  >
+                    Email Address
+                  </div>
+                }
+                name="email"
+                autoComplete="email"
+                style={{
+                  backgroundColor: "rgb(255, 255, 255, 0)",
+                  color: "white",
+                }}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                InputProps={{
+                  className: classes.multilineColor,
+                }}
+                multiline
+                rows={4}
+                name="message"
+                label={
+                  <div
+                    style={{
+                      color: "white",
+                    }}
+                  >
+                    Message
+                  </div>
+                }
+                type="message"
+                id="message"
+                style={{
+                  backgroundColor: "rgb(255, 255, 255, 0)",
+                }}
+              />
+            </Grid>
+          </Grid>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            <b>Submit</b>
+          </Button>
+        </form>
+      </div>
+    </Container>
   );
 }

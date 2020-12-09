@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
     position: "relative",
     height: "100px",
     paddingTop: "20px",
+    paddingBottom: "110px",
   },
   appBarShift: {
     // width: `calc(100% - ${drawerWidth}px)`,
