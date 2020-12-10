@@ -53,7 +53,7 @@ export default function Fakeazon() {
 
   return (
     <animated.div
-      class="cardProject"
+      className="cardProject"
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
       onMouseLeave={() => set({ xys: [0, 0, 0.9] })}
       style={{
