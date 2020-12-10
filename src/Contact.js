@@ -262,7 +262,7 @@ export default function SignUp() {
         <div className={classes.paperModal}>
           <h4>Thanks for your message!</h4>
           <hr />
-          <h6>I'll be sure to get back to shortly.</h6>
+          <h6>I'll be sure to get back to you shortly.</h6>
           <img src={ComputerGif} width="200vw" />
           <h5 onClick={handleClose}>←Back</h5>
         </div>
