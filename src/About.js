@@ -33,7 +33,7 @@ class About extends Component {
             <Fade direction="up" duration={2000} delay={500} triggerOnce>
               <h2 style={{ fontSize: "clamp(25px, 3vw, 40px)" }}>About me</h2>
             </Fade>
-            <Fade direction="up" delay={1000} duration={3000} triggerOnce>
+            <Fade direction="up" delay={1000} duration={2500} triggerOnce>
               <p className="" style={{ fontSize: "clamp(16px,2vw, 20px)" }}>
                 With a professional background in music, I have always been
                 dedicated towards the idea of applying technical ability towards
@@ -53,7 +53,7 @@ class About extends Component {
         </Row>
         <Row className="d-flex justify-content-center">
           <a href="Zac-Evans-Resume.pdf" target="_blank">
-            <Fade direction="left" delay={2500} duration={2000} triggerOnce>
+            <Fade direction="down" delay={2500} duration={2000} triggerOnce>
               <Button
                 variant="outlined"
                 color="primary"
@@ -65,7 +65,7 @@ class About extends Component {
             </Fade>
           </a>
           <a href="/projects">
-            <Fade direction="right" delay={3500} duration={2000} triggerOnce>
+            <Fade direction="down" delay={3500} duration={2000} triggerOnce>
               <Button
                 variant="outlined"
                 color="primary"

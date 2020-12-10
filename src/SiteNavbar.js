@@ -28,6 +28,7 @@ import FaceIcon from "@material-ui/icons/Face";
 import ImportantDevicesIcon from "@material-ui/icons/ImportantDevices";
 import GamesIcon from "@material-ui/icons/Games";
 import ComputerGif from "./img/computer.gif";
+import Audio from "./Audio";
 
 const drawerWidth = 325;
 
@@ -201,6 +202,7 @@ export default function SiteNavBar() {
             )}
           </IconButton>
         </div>
+        {/* <Audio /> */}
         <Divider style={{ border: "1px solid white" }} />
         <List>
           {["About", "Projects", "Skills", "Contact"].map((text, index) => (
