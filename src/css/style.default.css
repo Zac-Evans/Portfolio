@@ -2211,7 +2211,6 @@ code {
 html {
   height: 100%;
   overflow: hidden;
-  padding: env(safe-area-inset);
 }
 
 body {
