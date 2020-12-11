@@ -26,8 +26,10 @@ import Backdrop from "@material-ui/core/Backdrop";
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+
+    position: "absolute",
+
+    overflow: "auto",
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
@@ -35,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     maxWidth: "800px",
+    margin: "auto",
   },
 }));
 
@@ -175,106 +178,6 @@ const Projects = () => {
             }}
           >
             <div className={classes.paper}>
-              {" "}
-              <Card
-                className="m-4"
-                style={{
-                  backgroundColor: "rgb(229, 229, 229, .5)",
-                  height: "90%",
-                }}
-              >
-                <CardHeader
-                  avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                      <FontAwesomeIcon
-                        icon={faMicrochip}
-                        className="text-dark"
-                      />
-                    </Avatar>
-                  }
-                  action={
-                    <IconButton aria-label="settings">
-                      <MoreVertIcon />
-                    </IconButton>
-                  }
-                  title={<h2>Tech Stack</h2>}
-                  subheader=""
-                />
-                <CardActionArea>
-                  <CardContent>
-                    <Row>
-                      <Col>
-                        <h4>Frontend</h4>
-                        <ul className="">
-                          <li>
-                            <h6>React</h6>
-                          </li>
-                          <li>
-                            <h6>CSS</h6>
-                          </li>
-                          <li>
-                            <h6>HTML</h6>
-                          </li>
-                          <li>
-                            <h6>Bootstrap</h6>
-                          </li>
-                          <li>
-                            <h6>Material-UI</h6>
-                          </li>
-                          <li>
-                            <h6>jQuery</h6>
-                          </li>
-                        </ul>
-                      </Col>
-                      <Col>
-                        <h4>Backend</h4>
-                        <ul>
-                          <li>
-                            <h6>NodeJS</h6>
-                          </li>
-                          <li>
-                            <h6>Express</h6>
-                          </li>
-                          <li>
-                            <h6>PostgresQL</h6>
-                          </li>
-                          <li>
-                            <h6>Sequelize</h6>
-                          </li>
-                          <li>
-                            <h6>Bcrypt</h6>
-                          </li>
-                        </ul>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <a
-                        href="https://github.com/Zac-Evans/simply-budget"
-                        className="mx-auto m-3"
-                      >
-                        <h4>View on GitHub</h4>
-                      </a>
-                    </Row>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </div>
-          </Modal>
-        </Col>
-        <Col>
-          <Modal
-            aria-labelledby="spring-modal-title"
-            aria-describedby="spring-modal-description"
-            className={classes.modal}
-            open={openSimplyBudget}
-            onClose={handleClose}
-            closeAfterTransition
-            BackdropComponent={Backdrop}
-            BackdropProps={{
-              timeout: 500,
-            }}
-          >
-            <div className={classes.paper}>
               <div>
                 <div className="d-flex justify-content-between">
                   <h4>
@@ -287,15 +190,14 @@ const Projects = () => {
                 </div>
                 <hr />
                 <p>
-                  <b>Simply Budget</b> is a minimal and user-driven budgeting
-                  app that prioritizes not over-complicating the process of
-                  making and keeping a budget. This project was created to
-                  fufill the capstone requirements for the DigitalCrafts
-                  Full-Stack Bootcamp. It's development is ongoing and more
-                  functionality plans to be added down the road.
+                  <b>Fakeazon</b> is a simple e-commerce demo, complete with a
+                  main product page, a cart, a user system, and a checkout page.
+                  This project utilizes a PostgreSQL, Express, React, and
+                  Node.js stack. The UI was designed to mildly resemble a
+                  popular e-commerce website.
                 </p>
               </div>
-              <div className="video-responsive">
+              {/* <div className="video-responsive">
                 <iframe
                   width="420"
                   height="315"
@@ -304,7 +206,7 @@ const Projects = () => {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
-              </div>
+              </div> */}
               <br />
               <div>
                 <h4 className="text-center">
@@ -388,6 +290,133 @@ const Projects = () => {
             aria-labelledby="spring-modal-title"
             aria-describedby="spring-modal-description"
             className={classes.modal}
+            open={openSimplyBudget}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <div className={classes.paper}>
+              <div>
+                <div className="d-flex justify-content-between">
+                  <h4>
+                    Concept{" "}
+                    <FontAwesomeIcon icon={faLightbulb} className="mr-2 p-0" />
+                  </h4>
+                  <h6 className="text-secondary p-1 btn" onClick={handleClose}>
+                    <b>←Back</b>
+                  </h6>
+                </div>
+                <hr />
+                <p>
+                  <b>Simply Budget</b> is a minimal and user-driven budgeting
+                  app that prioritizes not over-complicating the process of
+                  making and keeping a budget. This project was created to
+                  fufill the capstone requirements for the DigitalCrafts
+                  Full-Stack Bootcamp. It's development is ongoing and more
+                  functionality plans to be added down the road.
+                </p>
+              </div>
+              <div className="video-responsive">
+                <iframe
+                  width="420"
+                  height="315"
+                  src="https://www.youtube.com/embed/cRbwRi5D52k"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <br />
+              <div>
+                <h4 className="text-center">
+                  Tech Stack{" "}
+                  <FontAwesomeIcon icon={faMicrochip} className="text-dark" />
+                </h4>
+                <hr />
+                <Row className="d-flex justify-content-center">
+                  <div className="mr-4">
+                    <h6>Frontend</h6>
+                    <ul className="">
+                      <li>
+                        <p className="m-1">
+                          <b>React</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>Redux</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>CSS6</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>HTML5</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>Bootstrap</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>Material-UI</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>jQuery</b>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="ml-4">
+                    <h6>Backend</h6>
+                    <ul>
+                      <li>
+                        <p className="m-1">
+                          <b>Node.js</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>Express</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>PostgreSQL</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>Sequelize</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>BCrypt</b>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </Row>
+              </div>
+            </div>
+          </Modal>
+        </Col>
+        <Col>
+          <Modal
+            aria-labelledby="spring-modal-title"
+            aria-describedby="spring-modal-description"
+            className={classes.modal}
             open={openDateDecider}
             onClose={handleClose}
             closeAfterTransition
@@ -397,88 +426,111 @@ const Projects = () => {
             }}
           >
             <div className={classes.paper}>
-              <Card
-                className="m-4"
-                style={{
-                  backgroundColor: "rgb(229, 229, 229, .5)",
-                  height: "90%",
-                }}
-              >
-                <CardHeader
-                  avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                      <FontAwesomeIcon
-                        icon={faMicrochip}
-                        className="text-dark"
-                      />
-                    </Avatar>
-                  }
-                  action={
-                    <IconButton aria-label="settings">
-                      <MoreVertIcon />
-                    </IconButton>
-                  }
-                  title={<h2>Tech Stack</h2>}
-                  subheader=""
+              <div>
+                <div className="d-flex justify-content-between">
+                  <h4>
+                    Concept{" "}
+                    <FontAwesomeIcon icon={faLightbulb} className="mr-2 p-0" />
+                  </h4>
+                  <h6 className="text-secondary p-1 btn" onClick={handleClose}>
+                    <b>←Back</b>
+                  </h6>
+                </div>
+                <hr />
+                <p>
+                  <b>Date Decider</b> is a web app that helps indecisive couples
+                  decide their plans for date night. I worked as part of a
+                  three-person team, and I was solely responsible for the main
+                  'date-deciding' application. I challenged myself with this
+                  project to mimic a single page application without using a
+                  framework like React or Vue.
+                </p>
+              </div>
+              {/* <div className="video-responsive">
+                <iframe
+                  width="420"
+                  height="315"
+                  src="https://www.youtube.com/embed/cRbwRi5D52k"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
                 />
-                <CardActionArea>
-                  <CardContent>
-                    <Row>
-                      <Col>
-                        <h4>Frontend</h4>
-                        <ul className="">
-                          <li>
-                            <h6>React</h6>
-                          </li>
-                          <li>
-                            <h6>CSS</h6>
-                          </li>
-                          <li>
-                            <h6>HTML</h6>
-                          </li>
-                          <li>
-                            <h6>Bootstrap</h6>
-                          </li>
-                          <li>
-                            <h6>Material-UI</h6>
-                          </li>
-                          <li>
-                            <h6>jQuery</h6>
-                          </li>
-                        </ul>
-                      </Col>
-                      <Col>
-                        <h4>Backend</h4>
-                        <ul>
-                          <li>
-                            <h6>NodeJS</h6>
-                          </li>
-                          <li>
-                            <h6>Express</h6>
-                          </li>
-                          <li>
-                            <h6>PostgresQL</h6>
-                          </li>
-                          <li>
-                            <h6>Sequelize</h6>
-                          </li>
-                          <li>
-                            <h6>Bcrypt</h6>
-                          </li>
-                        </ul>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <a
-                        href="https://github.com/Zac-Evans/simply-budget"
-                        className="mx-auto m-3"
-                      >
-                        <h4>View on GitHub</h4>
-                      </a>
-                    </Row>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+              </div> */}
+              <br />
+              <div>
+                <h4 className="text-center">
+                  Tech Stack{" "}
+                  <FontAwesomeIcon icon={faMicrochip} className="text-dark" />
+                </h4>
+                <hr />
+                <Row className="d-flex justify-content-center">
+                  <div className="mr-4">
+                    <h6>Frontend</h6>
+                    <ul className="">
+                      <li>
+                        <p className="m-1">
+                          <b>React</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>CSS</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>HTML</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>Bootstrap</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>Material-UI</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>jQuery</b>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="ml-4">
+                    <h6>Backend</h6>
+                    <ul>
+                      <li>
+                        <p className="m-1">
+                          <b>Node.js</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>Express</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>PostgreSQL</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>Sequelize</b>
+                        </p>
+                      </li>
+                      <li>
+                        <p className="m-1">
+                          <b>BCrypt</b>
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </Row>
+              </div>
             </div>
           </Modal>
         </Col>

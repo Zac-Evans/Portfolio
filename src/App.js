@@ -18,7 +18,10 @@ class App extends Component {
   overlayStyle = {
     width: "100%",
     height: "100%",
+    backgroundColor: "black",
     backgroundImage: `url(${Overlay})`,
+    padding:
+      "env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)",
     position: "absolute",
     top: 0,
     bottom: 0,

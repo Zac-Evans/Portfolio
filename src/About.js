@@ -36,7 +36,7 @@ class About extends Component {
             <Fade direction="up" delay={1000} duration={2500} triggerOnce>
               <p className="" style={{ fontSize: "clamp(16px,2vw, 20px)" }}>
                 With a professional background in music, I have always been
-                dedicated towards the idea of applying technical ability towards
+                dedicated to the idea of applying technical ability towards
                 creative endeavors.
                 <br /> <br />
                 As more of our lives take place on the web, I have discovered a
@@ -44,7 +44,7 @@ class About extends Component {
                 for people online. The combination of design, technology,
                 ingenuity and creativity is what initial drew me to the field of
                 software and web development, and I aim to bring that marriage
-                of ideas to life in each project work on.
+                of ideas to life in each project I work on.
               </p>
             </Fade>
           </Col>

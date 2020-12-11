@@ -20,3 +20,18 @@
   background-image: url("../img/overlay.gif");
   background-size: cover;
 }
+
+html {
+  height: 100%;
+
+  overflow: hidden;
+  background-color: black;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  /* padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left); */
+}
