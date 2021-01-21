@@ -352,7 +352,7 @@ const Projects = () => {
                       </li>
                       <li>
                         <p className="m-1">
-                          <b>CSS6</b>
+                          <b>CSS</b>
                         </p>
                       </li>
                       <li>
