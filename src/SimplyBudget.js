@@ -81,7 +81,12 @@ export default function SimplyBudget() {
             }}
             className="d-flex justify-content-around"
           >
-            <Button size="large" color="primary">
+            <Button
+              size="large"
+              color="primary"
+              href="https://simplybudget.co/"
+              target="_blank"
+            >
               <h6>
                 <b>Visit</b>
               </h6>
