@@ -42,7 +42,7 @@ class About extends Component {
                 As more of our lives take place on the web, I have discovered a
                 passion for building and designing enjoyable and engaging spaces
                 for people online. The combination of design, technology,
-                ingenuity and creativity is what initial drew me to the field of
+                ingenuity and creativity is what initially drew me to the field of
                 software and web development, and I aim to bring that marriage
                 of ideas to life in each project I work on.
               </p>
