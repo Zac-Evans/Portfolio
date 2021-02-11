@@ -1,49 +1,53 @@
-import React, { Component } from "react";
-import { Nav, Navbar, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import "react-sticky-header/styles.css";
-import StickyHeader from "react-sticky-header";
-import Typewriter from "typewriter-effect";
-import { Fade } from "react-awesome-reveal";
-import clsx from "clsx";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import EmojiPeopleIcon from "@material-ui/icons/EmojiPeople";
-import FaceIcon from "@material-ui/icons/Face";
-import ImportantDevicesIcon from "@material-ui/icons/ImportantDevices";
-import GamesIcon from "@material-ui/icons/Games";
-import ComputerGif from "./img/computer.gif";
-import Audio from "./Audio";
+import React, { Component } from 'react';
+import { Nav, Navbar, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import 'react-sticky-header/styles.css';
+import StickyHeader from 'react-sticky-header';
+import Typewriter from 'typewriter-effect';
+import { Fade } from 'react-awesome-reveal';
+import clsx from 'clsx';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import List from '@material-ui/core/List';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
+import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
+import FaceIcon from '@material-ui/icons/Face';
+import ImportantDevicesIcon from '@material-ui/icons/ImportantDevices';
+import GamesIcon from '@material-ui/icons/Games';
+import ComputerGif from './img/computer.gif';
+import ReactAudioPlayer from 'react-audio-player';
+import BackgroundMusic from './background.mp3';
+import { Button } from '@material-ui/core';
+import VolumeUpIcon from '@material-ui/icons/VolumeUp';
+import VolumeOffIcon from '@material-ui/icons/VolumeOff';
 
 const drawerWidth = 325;
 
 const useStyles = makeStyles((theme) => ({
   root: {},
   appBar: {
-    transition: theme.transitions.create(["margin", "width"], {
+    transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    backgroundColor: "rgb(0,0,0,0)",
-    position: "relative",
-    height: "100px",
-    paddingTop: "20px",
-    paddingBottom: "110px",
+    backgroundColor: 'rgb(0,0,0,0)',
+    position: 'relative',
+    height: '100px',
+    paddingTop: '20px',
+    paddingBottom: '110px',
   },
   appBarShift: {
     // width: `calc(100% - ${drawerWidth}px)`,
@@ -57,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   hide: {
-    visibility: "hidden",
+    visibility: 'hidden',
   },
   drawer: {
     width: drawerWidth,
@@ -66,27 +70,27 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
-    backgroundColor: "rgb(10,10,10)",
+    backgroundColor: 'rgb(10,10,10)',
   },
   drawerHeader: {
-    display: "flex",
-    alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: "flex-start",
+    justifyContent: 'flex-start',
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
-    transition: theme.transitions.create("margin", {
+    transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
     marginRight: -drawerWidth,
   },
   contentShift: {
-    transition: theme.transitions.create("margin", {
+    transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
@@ -95,8 +99,8 @@ const useStyles = makeStyles((theme) => ({
   typewriter: {
     fontFamily: "'Courier New', monospace",
     fontWeight: 700,
-    color: "rgb(255,255,255,.8)",
-    fontSize: "clamp(16px, 5vw, 30px)",
+    color: 'rgb(255,255,255,.8)',
+    fontSize: 'clamp(16px, 5vw, 30px)',
   },
 }));
 
@@ -104,13 +108,17 @@ export default function SiteNavBar() {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
-
+  const [isMuted, setIsMuted] = React.useState(true);
   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleMuteButton = () => {
+    isMuted === true ? setIsMuted(false) : setIsMuted(true);
   };
 
   return (
@@ -124,60 +132,124 @@ export default function SiteNavBar() {
         elevation={0}
       >
         <Toolbar>
-          <IconButton
+          <ReactAudioPlayer
+            src={BackgroundMusic}
+            autoPlay={true}
+            style={{ width: '0px' }}
+            muted={isMuted}
+          />
+          {/* <audio src={BackgroundMusic} autoplay={true} muted={false}></audio> */}
+
+          {isMuted === true ? (
+            <Row
+              style={{
+                marginRight: 'auto',
+                marginLeft: '0px',
+              }}
+            >
+              <VolumeOffIcon
+                style={{
+                  fontSize: '60px',
+
+                  color: 'grey',
+                }}
+                onClick={() => {
+                  handleMuteButton();
+                }}
+              />
+              <p
+                className='my-auto'
+                style={{
+                  marginRight: 'auto',
+                  marginLeft: '0px',
+                }}
+              >
+                music off
+              </p>
+            </Row>
+          ) : (
+            <Row
+              style={{
+                marginRight: 'auto',
+                marginLeft: '0px',
+              }}
+            >
+              <VolumeUpIcon
+                style={{
+                  fontSize: '60px',
+
+                  color: 'lightblue',
+                }}
+                onClick={() => {
+                  handleMuteButton();
+                }}
+              />
+              <p
+                className='my-auto'
+                style={{
+                  marginRight: 'auto',
+                  marginLeft: '0px',
+                }}
+              >
+                music on
+              </p>
+            </Row>
+          )}
+
+          {/* <IconButton
             style={{
-              marginRight: "auto",
-              marginLeft: "0px",
-              visibility: "hidden",
+              marginRight: 'auto',
+              marginLeft: '0px',
+              visibility: 'hidden',
             }}
             disabled
           >
-            <MenuIcon style={{ fontSize: "40px" }} />
-          </IconButton>
-          <a href="/Home" className="mx-auto">
+            <MenuIcon style={{ fontSize: '40px' }} />
+          </IconButton> */}
+          <a href='/Home' className='mx-auto'>
             <h1
               style={{
-                fontSize: "clamp(30px, 6vw, 90px)",
+                fontSize: 'clamp(30px, 6vw, 90px)',
               }}
-              className="text-center mx-auto"
+              className='text-center'
             >
               Zac Evans
             </h1>
           </a>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
+            color='inherit'
+            aria-label='open drawer'
+            edge='end'
             onClick={handleDrawerOpen}
             className={clsx(open && classes.hide)}
             style={{
-              marginLeft: "auto",
-              marginRight: "0px",
+              marginLeft: 'auto',
+              marginRight: '0px',
             }}
           >
-            <MenuIcon style={{ fontSize: "40px" }} />
+            <MenuIcon style={{ fontSize: '40px' }} />
           </IconButton>
         </Toolbar>
-        <hr className="white  m-2" style={{ border: "1px solid white" }} />
+        <hr className='white  m-2' style={{ border: '1px solid white' }} />
         <Row
-          className="d-flex justify-content-center text-center"
+          className='d-flex justify-content-center text-center'
           style={{ fontSize: 20 }}
         >
           <div className={classes.typewriter}>
             <Typewriter
-              style={{ fontFamily: "Courier New" }}
+              style={{ fontFamily: 'Courier New' }}
               options={{
                 strings: [
-                  "Full-Stack Developer",
-                  "Tech Enthusiast",
-                  "Jazz Nerd",
-                  "Design Guy",
-                  "Friendly Neighbor",
-                  "Reluctant Cat Owner",
+                  'Full-Stack Developer',
+                  'Tech Enthusiast',
+                  'Jazz Nerd',
+                  'Design Guy',
+                  'Friendly Neighbor',
+                  'Reluctant Cat Owner',
                 ],
                 autoStart: true,
                 loop: true,
-                skipAddStyles: "true",
+                skipAddStyles: 'true',
               }}
             />
           </div>
@@ -186,16 +258,16 @@ export default function SiteNavBar() {
 
       <Drawer
         className={classes.drawer}
-        variant="persistent"
-        anchor="right"
+        variant='persistent'
+        anchor='right'
         open={open}
         classes={{
           paper: classes.drawerPaper,
         }}
       >
         <div className={classes.drawerHeader}>
-          <IconButton style={{ color: "white" }} onClick={handleDrawerClose}>
-            {theme.direction === "rtl" ? (
+          <IconButton style={{ color: 'white' }} onClick={handleDrawerClose}>
+            {theme.direction === 'rtl' ? (
               <ChevronLeftIcon />
             ) : (
               <ChevronRightIcon />
@@ -203,33 +275,33 @@ export default function SiteNavBar() {
           </IconButton>
         </div>
         {/* <Audio /> */}
-        <Divider style={{ border: "1px solid white" }} />
+        <Divider style={{ border: '1px solid white' }} />
         <List>
-          {["About", "Projects", "Skills", "Contact"].map((text, index) => (
-            <a href={"/" + text}>
+          {['About', 'Projects', 'Skills', 'Contact'].map((text, index) => (
+            <a href={'/' + text}>
               <ListItem button key={text}>
                 <ListItemIcon>
                   {index === 0 ? (
-                    <FaceIcon fontSize="large" style={{ color: "white" }} />
+                    <FaceIcon fontSize='large' style={{ color: 'white' }} />
                   ) : index === 1 ? (
                     <ImportantDevicesIcon
-                      fontSize="large"
-                      style={{ color: "white" }}
+                      fontSize='large'
+                      style={{ color: 'white' }}
                     />
                   ) : index === 2 ? (
-                    <GamesIcon fontSize="large" style={{ color: "white" }} />
+                    <GamesIcon fontSize='large' style={{ color: 'white' }} />
                   ) : (
-                    <MailIcon fontSize="large" style={{ color: "white" }} />
+                    <MailIcon fontSize='large' style={{ color: 'white' }} />
                   )}
                 </ListItemIcon>
 
-                <ListItemText style={{ color: "white" }} primary={text} />
+                <ListItemText style={{ color: 'white' }} primary={text} />
               </ListItem>
             </a>
           ))}
         </List>
-        <div className="d-flex flex-column justify-content-end align-self-end h-100">
-          <img src={ComputerGif} width="200vw" />
+        <div className='d-flex flex-column justify-content-end align-self-end h-100'>
+          <img src={ComputerGif} width='200vw' />
         </div>
       </Drawer>
     </div>
