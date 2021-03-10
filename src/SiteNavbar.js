@@ -139,7 +139,7 @@ export default function SiteNavBar() {
             muted={isMuted}
           />
           {/* <audio src={BackgroundMusic} autoplay={true} muted={false}></audio> */}
-
+/*
           {isMuted === true ? (
             <Row
               style={{
@@ -195,8 +195,8 @@ export default function SiteNavBar() {
               </p>
             </Row>
           )}
-
-          {/* <IconButton
+*/
+           <IconButton
             style={{
               marginRight: 'auto',
               marginLeft: '0px',
@@ -205,7 +205,7 @@ export default function SiteNavBar() {
             disabled
           >
             <MenuIcon style={{ fontSize: '40px' }} />
-          </IconButton> */}
+          </IconButton>
           <a href='/Home' className='mx-auto'>
             <h1
               style={{
