@@ -132,7 +132,7 @@ export default function SiteNavBar() {
         elevation={0}
       >
         <Toolbar>
-          <ReactAudioPlayer
+         /* <ReactAudioPlayer
             src={BackgroundMusic}
             autoPlay={true}
             style={{ width: '0px' }}
