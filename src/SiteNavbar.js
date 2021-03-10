@@ -132,70 +132,7 @@ export default function SiteNavBar() {
         elevation={0}
       >
         <Toolbar>
-          /*
-          <ReactAudioPlayer
-            src={BackgroundMusic}
-            autoPlay={true}
-            style={{ width: '0px' }}
-            muted={isMuted}
-          />
-          
-          {isMuted === true ? (
-            <Row
-              style={{
-                marginRight: 'auto',
-                marginLeft: '0px',
-              }}
-            >
-              <VolumeOffIcon
-                style={{
-                  fontSize: '60px',
-
-                  color: 'grey',
-                }}
-                onClick={() => {
-                  handleMuteButton();
-                }}
-              />
-              <p
-                className='my-auto'
-                style={{
-                  marginRight: 'auto',
-                  marginLeft: '0px',
-                }}
-              >
-                music off
-              </p>
-            </Row>
-          ) : (
-            <Row
-              style={{
-                marginRight: 'auto',
-                marginLeft: '0px',
-              }}
-            >
-              <VolumeUpIcon
-                style={{
-                  fontSize: '60px',
-
-                  color: 'lightblue',
-                }}
-                onClick={() => {
-                  handleMuteButton();
-                }}
-              />
-              <p
-                className='my-auto'
-                style={{
-                  marginRight: 'auto',
-                  marginLeft: '0px',
-                }}
-              >
-                music on
-              </p>
-            </Row>
-          )}
-*/
+      
            <IconButton
             style={{
               marginRight: 'auto',
