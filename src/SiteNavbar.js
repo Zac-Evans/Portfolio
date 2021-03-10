@@ -132,14 +132,14 @@ export default function SiteNavBar() {
         elevation={0}
       >
         <Toolbar>
-         /* <ReactAudioPlayer
+          <ReactAudioPlayer
             src={BackgroundMusic}
             autoPlay={true}
             style={{ width: '0px' }}
             muted={isMuted}
           />
           {/* <audio src={BackgroundMusic} autoplay={true} muted={false}></audio> */}
-/*
+
           {isMuted === true ? (
             <Row
               style={{
@@ -195,7 +195,7 @@ export default function SiteNavBar() {
               </p>
             </Row>
           )}
-*/
+
            <IconButton
             style={{
               marginRight: 'auto',
