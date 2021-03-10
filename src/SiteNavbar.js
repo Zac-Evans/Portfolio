@@ -139,8 +139,7 @@ export default function SiteNavBar() {
             style={{ width: '0px' }}
             muted={isMuted}
           />
-          {/* <audio src={BackgroundMusic} autoplay={true} muted={false}></audio> */}
-/*
+          
           {isMuted === true ? (
             <Row
               style={{
